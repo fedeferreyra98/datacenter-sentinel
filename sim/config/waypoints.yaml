@@ -1,0 +1,54 @@
+# Patrol waypoints — one per rack
+# Coords match inspection_waypoints in config/datacenter_layout.json
+# The patrol visits racks in a U-shaped route:
+#   RACK-01 → 02 → 03 (Zone A, left to right)
+#   RACK-04 → 05 → 06 (Zone B, right to left, snake pattern)
+
+waypoints:
+  - rack_id: RACK-01
+    zone: ZONE-A
+    pose:
+      x: 3.0
+      y: 5.5
+      yaw: 1.5708   # 90° → facing north (toward rack)
+    dwell_secs: 3.0  # pause at waypoint for sensor reading
+
+  - rack_id: RACK-02
+    zone: ZONE-A
+    pose:
+      x: 6.0
+      y: 5.5
+      yaw: 1.5708
+    dwell_secs: 3.0
+
+  - rack_id: RACK-03
+    zone: ZONE-A
+    pose:
+      x: 9.0
+      y: 5.5
+      yaw: 1.5708
+    dwell_secs: 3.0
+
+  - rack_id: RACK-04
+    zone: ZONE-B
+    pose:
+      x: 9.0
+      y: 4.5
+      yaw: -1.5708  # -90° → facing south (toward rack)
+    dwell_secs: 3.0
+
+  - rack_id: RACK-05
+    zone: ZONE-B
+    pose:
+      x: 6.0
+      y: 4.5
+      yaw: -1.5708
+    dwell_secs: 3.0
+
+  - rack_id: RACK-06
+    zone: ZONE-B
+    pose:
+      x: 3.0
+      y: 4.5
+      yaw: -1.5708
+    dwell_secs: 3.0

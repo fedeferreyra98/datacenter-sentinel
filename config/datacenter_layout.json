@@ -1,0 +1,32 @@
+{
+  "room": {
+    "width_m": 15.0,
+    "depth_m": 10.0,
+    "wall_thickness_m": 0.2
+  },
+  "robot_start": {
+    "x": 0.5,
+    "y": 5.0,
+    "yaw_deg": 0
+  },
+  "zones": [
+    { "id": "ZONE-A", "name": "Hot Aisle",  "y_center": 6.5 },
+    { "id": "ZONE-B", "name": "Cold Aisle", "y_center": 3.5 }
+  ],
+  "racks": [
+    { "id": "RACK-01", "zone": "ZONE-A", "x": 3.0,  "y": 7.0, "width_m": 0.6, "depth_m": 1.0, "height_m": 2.0 },
+    { "id": "RACK-02", "zone": "ZONE-A", "x": 6.0,  "y": 7.0, "width_m": 0.6, "depth_m": 1.0, "height_m": 2.0 },
+    { "id": "RACK-03", "zone": "ZONE-A", "x": 9.0,  "y": 7.0, "width_m": 0.6, "depth_m": 1.0, "height_m": 2.0 },
+    { "id": "RACK-04", "zone": "ZONE-B", "x": 3.0,  "y": 3.0, "width_m": 0.6, "depth_m": 1.0, "height_m": 2.0 },
+    { "id": "RACK-05", "zone": "ZONE-B", "x": 6.0,  "y": 3.0, "width_m": 0.6, "depth_m": 1.0, "height_m": 2.0 },
+    { "id": "RACK-06", "zone": "ZONE-B", "x": 9.0,  "y": 3.0, "width_m": 0.6, "depth_m": 1.0, "height_m": 2.0 }
+  ],
+  "inspection_waypoints": [
+    { "rack_id": "RACK-01", "x": 3.0,  "y": 5.5, "yaw_deg": 90  },
+    { "rack_id": "RACK-02", "x": 6.0,  "y": 5.5, "yaw_deg": 90  },
+    { "rack_id": "RACK-03", "x": 9.0,  "y": 5.5, "yaw_deg": 90  },
+    { "rack_id": "RACK-04", "x": 9.0,  "y": 4.5, "yaw_deg": 270 },
+    { "rack_id": "RACK-05", "x": 6.0,  "y": 4.5, "yaw_deg": 270 },
+    { "rack_id": "RACK-06", "x": 3.0,  "y": 4.5, "yaw_deg": 270 }
+  ]
+}
