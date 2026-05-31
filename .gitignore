@@ -222,9 +222,9 @@ __marimo__/
 
 # AI related files
 #   These files may contain sensitive information such as API keys, user data, or other secrets. It is recommended to keep them out of version control to protect your privacy and security.
-*CLAUDE.md
-*GEMINI.md
-*GPT.md
+*CLAUDE.*
+*GEMINI.*
+*GPT.*
 
 
 .DS_Store
