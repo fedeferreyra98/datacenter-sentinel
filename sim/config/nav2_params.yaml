@@ -247,6 +247,22 @@ waypoint_follower:
       enabled: True
       waypoint_pause_duration: 3000  # ms — matches dwell_secs in waypoints.yaml
 
+lifecycle_manager:
+  ros__parameters:
+    use_sim_time: True
+    autostart: True
+    # Colab is slow — give nodes enough time to bond before lifecycle transitions.
+    # Default is 4.0s which is too short; 20s covers slow Colab runtimes.
+    bond_timeout: 20.0
+    node_names:
+      - controller_server
+      - smoother_server
+      - planner_server
+      - behavior_server
+      - bt_navigator
+      - waypoint_follower
+      - velocity_smoother
+
 velocity_smoother:
   ros__parameters:
     use_sim_time: True

@@ -114,7 +114,7 @@ def generate_launch_description():
 
     # ── Sentinel nodes (delayed to let Gazebo + Nav2 stabilise) ──────────
     virtual_sensor_node = TimerAction(
-        period=15.0,
+        period=35.0,
         actions=[
             Node(
                 package='sentinel_sim',
@@ -134,7 +134,7 @@ def generate_launch_description():
     )
 
     sensor_logger_node = TimerAction(
-        period=15.0,
+        period=35.0,
         actions=[
             Node(
                 package='sentinel_sim',
@@ -150,7 +150,7 @@ def generate_launch_description():
     )
 
     patrol_node = TimerAction(
-        period=20.0,   # start after Nav2 is fully up
+        period=40.0,   # start after Nav2 is fully up and bonded
         actions=[
             Node(
                 package='sentinel_sim',
@@ -175,7 +175,7 @@ def generate_launch_description():
         rsp,
         map_to_odom_tf,
         TimerAction(period=5.0, actions=[spawn_robot]),
-        TimerAction(period=8.0, actions=[nav2_launch]),
+        TimerAction(period=15.0, actions=[nav2_launch]),
         virtual_sensor_node,
         sensor_logger_node,
         patrol_node,
