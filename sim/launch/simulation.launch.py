@@ -73,7 +73,7 @@ def generate_launch_description():
         arguments=[
             '-entity', 'sentinel_robot',
             '-file',   urdf_file,
-            '-x', '0.5', '-y', '5.0', '-z', '0.1', '-Y', '0.0',
+            '-x', '1.5', '-y', '5.0', '-z', '0.1', '-Y', '0.0',
         ],
         output='screen',
     )
