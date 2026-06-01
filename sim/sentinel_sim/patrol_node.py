@@ -158,8 +158,18 @@ class PatrolNode(Node):
             msg.data = rack_id
             self._wp_pub.publish(msg)
 
-            # Dwell then advance
-            self.create_timer(dwell, lambda: self._advance_once(rack_id))
+            # One-shot dwell timer.
+            # create_timer() is repeating by default in ROS 2 — we cancel it
+            # inside the callback so it fires exactly once.
+            timer_ref = [None]
+
+            def _dwell_fire():
+                if timer_ref[0] is not None:
+                    timer_ref[0].cancel()
+                    timer_ref[0] = None
+                    self._advance_once(rack_id)
+
+            timer_ref[0] = self.create_timer(dwell, _dwell_fire)
         else:
             self.get_logger().warn(
                 f'Navigation to {rack_id} ended with status {status} — advancing.'
